@@ -30,6 +30,23 @@
             color: red;
             font-size: 0.9em;
         }
+
+        #submit-btn {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            background-color: green;
+            font-size: 1em;
+            border-radius: 90px;
+            width: 90px;
+            height: 30px;
+            border: #fff;
+            justify-content: center;
+            /* horizontal */
+            align-items: center;
+            margin: 0 auto;
+
+        }
     </style>
 </head>
 
@@ -51,9 +68,9 @@
             <span class="error" id="errorMsg"></span>
 
             <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday">
+            <input type="date" id="birthday" name="birthday"> <br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submit-btn">
         </fieldset>
     </form>
 
