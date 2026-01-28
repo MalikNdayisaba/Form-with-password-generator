@@ -4,77 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing out Git Bash</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-
-        fieldset {
-            max-width: 400px;
-            padding: 20px;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input[type="submit"] {
-            margin-top: 15px;
-        }
-
-        .error {
-            color: red;
-            font-size: 0.9em;
-        }
-
-        #submit-btn {
-            display: flex;
-            flex-direction: column;
-            color: #fff;
-            background-color: green;
-            font-size: 1em;
-            border-radius: 90px;
-            width: 90px;
-            height: 30px;
-            border: #fff;
-            justify-content: center;
-            /* horizontal */
-            align-items: center;
-            margin: 0 auto;
-
-        }
-    </style>
+    <title>Form with Password Generator</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Hey there! Welcome to my first ever commit 🎉</h1>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white shadow-lg rounded-lg w-full max-w-lg p-6">
+        <h1 class="text-2xl font-bold text-center mb-6">User Registration Form</h1>
 
-    <form id="emailForm" novalidate>
-        <fieldset>
-            <legend>Personalia</legend>
+        <form id="emailForm" novalidate class="space-y-6">
 
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname" placeholder="George" required>
 
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname" placeholder="Steve" required>
+            <fieldset class="border p-4 rounded-lg space-y-4">
+                <legend class="font-semibold">Personalia</legend>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-            <span class="error" id="errorMsg"></span>
+                <div>
+                    <label for="fname" class="block font-medium mb-1">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="George" required
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
 
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday"> <br>
+                <div>
+                    <label for="lname" class="block font-medium mb-1">Last Name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Steve" required
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
 
-            <input type="submit" value="Submit" id="submit-btn">
-        </fieldset>
-    </form>
+                <div>
+                    <label for="email" class="block font-medium mb-1">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <span class="text-red-500 text-sm" id="errorMsg"></span>
+                </div>
 
-    <script src="Script.js"> </script>
+                <div>
+                    <label for="birthday" class="block font-medium mb-1">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday"
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+
+                <div>
+                    <label for="gender" class="block font-medium mb-1">Gender:</label>
+                    <select id="gender" name="gender"
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="">-- Select --</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="border p-4 rounded-lg space-y-4">
+                <legend class="font-semibold">Account Setup</legend>
+
+                <div>
+                    <label for="username" class="block font-medium mb-1">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="username123" required
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                </div>
+
+                <div>
+                    <label for="password" class="block font-medium mb-1">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Click generate" readonly
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <div class="flex items-center mt-2 space-x-4">
+                        <button type="button" id="generatePassword"
+                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Generate
+                            Password</button>
+                        <label class="flex items-center space-x-1">
+                            <input type="checkbox" id="togglePassword" class="accent-blue-500">
+                            <span class="text-sm">Show password</span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="text-center">
+                <input type="submit" value="Submit"
+                    class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 cursor-pointer transition">
+            </div>
+        </form>
+    </div>
+
+    <script src="Script.js" defer></script>
 </body>
 
 </html>
